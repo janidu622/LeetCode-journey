@@ -67,3 +67,28 @@ function memoize(fn) {
         return result;
     };
 }
+
+//pseudocode 
+/** 
+Read stMarks
+If stMarks >= 50 
+Display "pass"
+
+A function receives price and quantity and returns total price. Identify:
+Inputs: price and quantity 
+Process: product of price and quantity returns total price 
+Output: total price
+
+Without using code, decompose:
+“Build a user registration system.”
+
+into at least five smaller responsibilities.
+1.what kind of data or how many fields of input the user must fulfill to register 
+2.what input fields need to be validated
+3.what must show if the user is already registered
+4.what to redirect if the user registered succefully 
+5.what messages should be displayed to confirm whether registration success or not
+
+
+ 
+*/
