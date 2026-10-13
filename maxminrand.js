@@ -15,3 +15,16 @@ function hii(){
 }
 console.log(hii());
 
+const arr = [1,2,3,4,5];
+console.log(arr.slice(2,3));
+console.log(arr.splice(1,3));
+
+var cancellable = function(fn, args, t) {
+    const timer = setTimeout(() => {
+        fn(...args);
+    }, t);
+
+    return function cancelFn() {
+        clearTimeout(timer);
+    };
+};
