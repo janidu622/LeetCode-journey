@@ -1,4 +1,4 @@
-var flat = function(arr, n) {
+const flat = function(arr, n) {
     const result = [];
 
     function helper(array, depth) {
