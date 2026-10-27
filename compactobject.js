@@ -57,3 +57,15 @@ var compactObject = function(obj) {
     }
     return obj;
 };
+
+
+var compactObject = function(obj) {
+    if (obj === null || typeof obj !== 'object') return obj;
+    if (Array.isArray(obj)) return obj.map(compactObject).filter(Boolean);
+    
+    return Object.fromEntries(
+        Object.entries(obj)
+            .map(([k, v]) => [k, compactObject(v)])
+            .filter(([_, v]) => Boolean(v))
+    );
+};
