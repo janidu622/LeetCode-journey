@@ -34,3 +34,26 @@ var compactObject = function(obj) {
 
     return obj;
 };
+
+
+var compactObject = function(obj) {
+    if (Array.isArray(obj)) {
+        return obj.reduce((acc, curr) => {
+            const compacted = (curr !== null && typeof curr === 'object') ? compactObject(curr) : curr;
+            if (Boolean(compacted)) {
+                acc.push(compacted);
+            }
+            return acc;
+        }, []);
+    } else if (obj !== null && typeof obj === 'object') {
+        return Object.keys(obj).reduce((acc, key) => {
+            const val = obj[key];
+            const compacted = (val !== null && typeof val === 'object') ? compactObject(val) : val;
+            if (Boolean(compacted)) {
+                acc[key] = compacted;
+            }
+            return acc;
+        }, {});
+    }
+    return obj;
+};
