@@ -8,4 +8,7 @@ const countVowels = (str) => {
     }
   return count;
 }   
-console.log(countVowels("hieu")); 
+countVowels("Hello World")  // 3
+countVowels("sky")          // 0
+countVowels("AEIOU")        // 5
+
